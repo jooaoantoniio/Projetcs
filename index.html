@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevJourney — portfólio e diário de evolução no curso de Desenvolvimento de Sistemas Web/Mobile.">
+  <meta name="author" content="João Antônio">
+  <meta name="theme-color" content="#07090f">
+  <title>DevJourney | Minha jornada no desenvolvimento</title>
+
+  <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn...). Ao publicar, adicione og:url e og:image -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="DevJourney">
+  <meta property="og:title" content="DevJourney | Minha jornada no desenvolvimento">
+  <meta property="og:description" content="Portfólio e diário de evolução no curso de Desenvolvimento de Sistemas Web/Mobile: projetos, tecnologias e progresso de estudos.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Marca que o JS está ativo e aplica o tema antes da renderização (evita "piscar").
+       Ordem: tema salvo pelo usuário → tema do sistema operacional → escuro -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      var saved = null;
+      try {
+        saved = localStorage.getItem("devjourney-theme");
+      } catch (e) {}
+      if (saved !== "light" && saved !== "dark") {
+        saved = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      root.setAttribute("data-theme", saved);
+    })();
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="DevJourney, voltar ao início">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">Dev<span class="text-gradient">Journey</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#jornada">Minha Jornada</a></li>
+          <li><a class="nav__link" href="#tecnologias">Tecnologias</a></li>
+          <li><a class="nav__link" href="#projetos">Projetos</a></li>
+          <li><a class="nav__link" href="#estudos">Estudos</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Alternar para tema claro" title="Alternar para tema claro">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="#contato" class="btn btn--primary btn--sm header__cta">Fale comigo</a>
+
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <noscript>
+      <p class="noscript">Ative o JavaScript para ver a jornada, os projetos, o dashboard e as tarefas de estudo.</p>
+    </noscript>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            Em evolução constante
+            <span class="badge__sep" aria-hidden="true"></span>
+            <span class="badge__highlight">Web/Mobile</span>
+          </span>
+
+          <h1 class="hero__title" id="hero-title">
+            Transformando conhecimento em <span class="text-gradient">soluções digitais.</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            O DevJourney é o registro da minha jornada no curso de Desenvolvimento de Sistemas Web/Mobile:
+            cada tecnologia aprendida, cada projeto construído e cada passo da minha evolução como desenvolvedor.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projetos" class="btn btn--primary btn--lg">
+              Ver projetos
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="#jornada" class="btn btn--ghost btn--lg">Minha jornada</a>
+          </div>
+
+          <ul class="hero__highlights" aria-label="Áreas de estudo">
+            <li><strong>Front-end</strong><span>HTML · CSS · JS</span></li>
+            <li><strong>Back-end</strong><span>Java · Spring</span></li>
+            <li><strong>Dados</strong><span>SQL · APIs</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal__bar">
+              <div class="terminal__dots">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+              </div>
+              <div class="terminal__tabs">
+                <span class="terminal__tab is-active"><span class="terminal__tab-icon">JS</span>devjourney.js</span>
+                <span class="terminal__tab terminal__tab--secondary"><span class="terminal__tab-icon terminal__tab-icon--md">MD</span>README.md</span>
+              </div>
+            </div>
+<pre class="terminal__body"><code><span class="tk-key">const</span> <span class="tk-var">developer</span> = {
+  <span class="tk-prop">nome</span>: <span class="tk-str">"João Antônio"</span>,
+  <span class="tk-prop">curso</span>: <span class="tk-str">"Desenvolvimento de Sistemas"</span>,
+  <span class="tk-prop">foco</span>: [<span class="tk-str">"Web"</span>, <span class="tk-str">"Mobile"</span>],
+  <span class="tk-prop">stack</span>: [<span class="tk-str">"HTML"</span>, <span class="tk-str">"CSS"</span>, <span class="tk-str">"JS"</span>, <span class="tk-str">"Java"</span>],
+  <span class="tk-prop">aprendendo</span>: <span class="tk-var">true</span>,
+};
+
+<span class="tk-com">// O ciclo da evolução</span>
+<span class="tk-key">while</span> (developer.aprendendo) {
+  <span class="tk-fn">estudar</span>();
+  <span class="tk-fn">construir</span>();
+  <span class="tk-fn">evoluir</span>();
+}
+
+<span class="tk-prompt">$</span> git commit -m <span class="tk-str">"mais um passo"</span> <span class="cursor"></span></code></pre>
+            <div class="terminal__status">
+              <span class="terminal__branch"><span class="terminal__status-dot"></span>main</span>
+              <span class="terminal__meta">
+                <span>JavaScript</span>
+                <span>UTF-8</span>
+                <span>Ln 16, Col 32</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card--top">
+            <span class="floating-card__icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </span>
+            <span class="floating-card__text">
+              <strong>Commit realizado</strong>
+              <small>feat: novo projeto</small>
+            </span>
+          </div>
+
+          <div class="floating-card floating-card--bottom">
+            <span class="floating-card__icon floating-card__icon--accent">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M3 12h6M15 12h6"/>
+              </svg>
+            </span>
+            <span class="floating-card__text">
+              <strong>Aprendendo agora</strong>
+              <small>Java + Spring Boot</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MINHA JORNADA ===================== -->
+    <section class="section" id="jornada" aria-labelledby="jornada-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">01 · Trajetória</span>
+          <h2 class="section__title" id="jornada-title">Minha Jornada</h2>
+          <p class="section__description">
+            Do primeiro &lt;h1&gt; aos projetos completos: cada etapa representa um módulo do curso
+            e um degrau na minha evolução como desenvolvedor.
+          </p>
+        </header>
+
+        <!-- Conteúdo renderizado pelo módulo Timeline (js/main.js) -->
+        <div class="journey">
+          <div class="journey-summary" id="journey-summary" data-reveal="up"></div>
+          <ol class="timeline" id="timeline" aria-label="Etapas da minha jornada"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TECNOLOGIAS ===================== -->
+    <section class="section section--alt" id="tecnologias" aria-labelledby="tecnologias-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">02 · Stack</span>
+          <h2 class="section__title" id="tecnologias-title">Tecnologias</h2>
+          <p class="section__description">
+            Ferramentas e linguagens que fazem parte do meu dia a dia, com meu nível atual em cada uma.
+          </p>
+        </header>
+
+        <!-- Conteúdo renderizado pelo módulo Techs (js/main.js) -->
+        <div class="tech-toolbar" id="tech-toolbar" data-reveal="up"></div>
+        <ul class="tech-grid" id="tech-grid" aria-label="Tecnologias que estudo"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">03 · Portfólio</span>
+          <h2 class="section__title" id="projetos-title">Projetos</h2>
+          <p class="section__description">
+            Sistemas desenvolvidos durante o curso, do planejamento ao deploy.
+          </p>
+        </header>
+
+        <!-- Conteúdo renderizado pelo módulo Projects (js/main.js) -->
+        <div class="projects-toolbar" data-reveal="up">
+          <div class="filter-group" id="project-filters" role="group" aria-label="Filtrar projetos por tecnologia"></div>
+          <p class="projects-summary" id="projects-summary"></p>
+        </div>
+        <ul class="projects-grid" id="projects-grid" aria-label="Projetos"></ul>
+        <p class="projects-empty" id="projects-empty" hidden>Nenhum projeto nesta categoria ainda. Em breve!</p>
+        <p class="visually-hidden" id="projects-live" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ===================== MEU PROGRESSO ===================== -->
+    <section class="section section--alt" id="progresso" aria-labelledby="progresso-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">04 · Dashboard</span>
+          <h2 class="section__title" id="progresso-title">Meu progresso</h2>
+          <p class="section__description">
+            Números que mostram a evolução da jornada até aqui.
+          </p>
+        </header>
+
+        <!-- Conteúdo renderizado pelo módulo Progress (js/main.js) -->
+        <div class="dashboard" id="progress-dashboard"></div>
+      </div>
+    </section>
+
+    <!-- ===================== ESTUDOS ===================== -->
+    <section class="section" id="estudos" aria-labelledby="estudos-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">05 · Diário</span>
+          <h2 class="section__title" id="estudos-title">Estudos</h2>
+          <p class="section__description">
+            Organize suas tarefas de estudo, registre o tempo com o cronômetro e acompanhe o progresso.
+            Tudo fica salvo no seu navegador.
+          </p>
+        </header>
+
+        <div class="study">
+          <div class="study__overview">
+            <!-- Cronômetro: controlado pelo módulo StudyTimer (js/main.js) -->
+            <article class="timer-card" id="study-timer" data-reveal="up" aria-labelledby="timer-title">
+              <div class="timer-card__header">
+                <h3 class="timer-card__title" id="timer-title">Cronômetro de estudo</h3>
+                <span class="status status--next" id="timer-state">Parado</span>
+              </div>
+
+              <p class="timer-card__display" id="timer-display" role="timer" aria-label="Tempo da sessão atual">00:00:00</p>
+
+              <label class="field">
+                <span class="field__label">Estudando</span>
+                <select class="field__control" id="timer-task"></select>
+              </label>
+
+              <div class="timer-card__actions">
+                <button class="btn btn--primary" id="timer-toggle" type="button">Iniciar</button>
+                <button class="btn btn--ghost" id="timer-save" type="button" title="Disponível a partir de 1 minuto">Registrar sessão</button>
+                <button class="icon-btn" id="timer-reset" type="button" aria-label="Zerar cronômetro" title="Zerar cronômetro">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/>
+                    <path d="M3 3v5h5"/>
+                  </svg>
+                </button>
+              </div>
+
+              <dl class="timer-card__totals">
+                <div><dt>Hoje</dt><dd id="timer-today">0min</dd></div>
+                <div><dt>Total no cronômetro</dt><dd id="timer-total">0min</dd></div>
+              </dl>
+            </article>
+
+            <!-- Progresso das tarefas: renderizado pelo módulo Tasks -->
+            <article class="task-progress" id="task-progress" data-reveal="up" style="--reveal-delay: 80ms"></article>
+          </div>
+
+          <!-- Tarefas: controladas pelo módulo Tasks (js/main.js) -->
+          <div class="task-panel" data-reveal="up">
+            <form class="task-form" id="task-form" aria-label="Adicionar tarefa">
+              <label class="visually-hidden" for="task-title">Nova tarefa</label>
+              <input class="field__control task-form__title" id="task-title" name="title" type="text"
+                     placeholder="O que você vai estudar?" maxlength="120" autocomplete="off" required>
+
+              <label class="visually-hidden" for="task-category">Área</label>
+              <select class="field__control" id="task-category" name="category"></select>
+
+              <label class="visually-hidden" for="task-estimate">Estimativa em horas</label>
+              <input class="field__control task-form__estimate" id="task-estimate" name="estimate" type="number"
+                     min="0.5" max="100" step="0.5" placeholder="Horas">
+
+              <button class="btn btn--primary" type="submit">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Adicionar
+              </button>
+            </form>
+
+            <div class="task-toolbar">
+              <div class="search">
+                <svg class="icon search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7"/>
+                  <path d="m20 20-3.5-3.5"/>
+                </svg>
+                <label class="visually-hidden" for="task-search">Buscar tarefas</label>
+                <input class="field__control search__input" id="task-search" type="search"
+                       placeholder="Buscar tarefas..." autocomplete="off">
+              </div>
+
+              <div class="filter-group" id="task-filters" role="group" aria-label="Filtrar tarefas por status"></div>
+
+              <label class="visually-hidden" for="task-category-filter">Filtrar por área</label>
+              <select class="field__control task-toolbar__select" id="task-category-filter"></select>
+            </div>
+
+            <ul class="task-list" id="task-list" aria-label="Tarefas de estudo"></ul>
+            <p class="task-empty" id="task-empty" hidden></p>
+
+            <div class="task-panel__footer">
+              <p id="task-summary"></p>
+              <button class="task-clear" id="task-clear" type="button">Limpar concluídas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section section--alt" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">06 · Conexão</span>
+          <h2 class="section__title" id="contato-title">Contato</h2>
+          <p class="section__description">
+            Quer trocar uma ideia, propor um projeto ou acompanhar minha jornada? Fale comigo.
+          </p>
+        </header>
+
+        <div class="placeholder" id="contact">
+          <span class="placeholder__chip">Em construção</span>
+          <span class="placeholder__icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-10 6L2 7"/>
+            </svg>
+          </span>
+          <p class="placeholder__title">Formulário de contato</p>
+          <p class="placeholder__text">Formulário com validação e links diretos para LinkedIn, GitHub e e-mail.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="logo" aria-label="DevJourney, voltar ao início">
+          <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+          <span class="logo__text">Dev<span class="text-gradient">Journey</span></span>
+        </a>
+        <p>Minha jornada no desenvolvimento de sistemas.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Links do rodapé">
+        <ul>
+          <li><a href="#jornada">Minha Jornada</a></li>
+          <li><a href="#tecnologias">Tecnologias</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#progresso">Meu progresso</a></li>
+          <li><a href="#estudos">Estudos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Substitua pelos seus links reais -->
+      <div class="footer__social">
+        <a class="icon-btn" href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="mailto:seu-email@exemplo.com" aria-label="E-mail">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-10 6L2 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="current-year">2026</span> DevJourney. Feito com HTML, CSS e JavaScript puro.</p>
+      <a href="#inicio" class="footer__top">
+        Voltar ao topo
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <p class="footer__wordmark" aria-hidden="true">DevJourney</p>
+  </footer>
+
+  <!-- Avisos rápidos (ex.: "Tarefa excluída · Desfazer") — módulo Toast -->
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
+
+  <!-- ===================== MODAL DE PROJETO ===================== -->
+  <!-- Conteúdo renderizado pelo módulo ProjectModal (js/main.js) -->
+  <dialog class="modal" id="project-modal" aria-labelledby="project-modal-title">
+    <button class="icon-btn modal__close" type="button" data-modal-close aria-label="Fechar detalhes do projeto">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal__content" id="project-modal-content"></div>
+  </dialog>
+</body>
+</html>
